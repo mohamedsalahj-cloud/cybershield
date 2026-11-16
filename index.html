@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>CyberShield Pro π 🇹🇳</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { background: #090514; color: #f8fafc; font-family: Tahoma, Arial, sans-serif; margin: 0; padding: 15px; }
+    .header { text-align: center; margin-bottom: 12px; }
+    .header h1 { color: #fbbf24; margin: 0; font-size: 26px; }
+    .top-controls { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .badge { display: inline-block; background: #064e3b; color: #34d399; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+    .lang-bar { display: inline-flex; gap: 5px; background: #1a102e; padding: 4px; border-radius: 20px; border: 1px solid #6b21a8; }
+    .lang-btn { background: transparent; color: #cbd5e1; border: none; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; cursor: pointer; }
+    .lang-btn:hover { background: #fbbf24; color: #1e1035; }
+    .banners { max-width: 1200px; margin: 0 auto 16px auto; display: flex; flex-direction: column; gap: 10px; }
+    .b-pi { background: linear-gradient(90deg, #3b0764, #7f1d1d); border: 1px solid #fbbf24; border-radius: 10px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13.5px; font-weight: bold; color: #fef3c7; }
+    .b-denet { background: linear-gradient(90deg, #0f172a, #311042); border: 1px solid #38bdf8; border-radius: 10px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .b-denet strong { color: #38bdf8; font-size: 14px; display: block; margin-bottom: 3px; }
+    .b-denet p { margin: 0; font-size: 12px; color: #cbd5e1; }
+    .btn-link { background: #38bdf8; color: #020617; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 12.5px; }
+    .btn-ref { background: #2e1065; color: #fbbf24; border: 1px solid #fbbf24; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 12.5px; cursor: pointer; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+    .card { background: #1a102e; border: 1px solid #6b21a8; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+    .card h3 { color: #fef3c7; margin: 0 0 8px 0; font-size: 15px; border-bottom: 1px solid #4c1d95; padding-bottom: 6px; }
+    .card p { color: #cbd5e1; font-size: 12px; margin: 0 0 10px 0; }
+    input, textarea { width: 100%; padding: 9px; margin-bottom: 8px; border-radius: 8px; border: 1px solid #6b21a8; background: #0b0618; color: #fbbf24; font-size: 13px; }
+    textarea { height: 55px; resize: none; }
+    .btn-row { display: flex; gap: 8px; }
+    button.act { border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 13px; flex: 1; }
+    .btn-gold { background: #fbbf24; color: #1e1035; }
+    .btn-purple { background: #4c1d95; color: #ffffff; }
+    .res { margin-top: 8px; font-size: 12.5px; font-weight: bold; text-align: center; min-height: 18px; }
+    .bar { width: 100%; height: 8px; background: #0b0618; border-radius: 5px; margin-bottom: 10px; overflow: hidden; }
+    .fill { height: 100%; width: 0%; background: #fbbf24; transition: 0.3s; }
+    label { display: block; font-size: 12px; margin-bottom: 5px; cursor: pointer; }
+    label input { width: auto; margin-left: 6px; margin-right: 6px; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🛡️ CYBERSHIELD PRO π 🇹🇳</h1>
+    <div class="top-controls">
+      <div class="badge" id="statusBadge">⏳ جاري التحقق...</div>
+      <div class="lang-bar">
+        <button type="button" class="lang-btn" onclick="changeLang('ar')">العربية 🇹🇳</button>
+        <button type="button" class="lang-btn" onclick="changeLang('fr')">Français 🇫🇷</button>
+        <button type="button" class="lang-btn" onclick="changeLang('en')">English 🇬🇧</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="banners">
+    <div class="b-pi">
+      <span id="piText">π منظومة حماية رواد Pi Network وأصول Web3 — أمان متكامل لمحفظتك الرقمية</span>
+      <span id="tnTag" style="background:#dc2626; color:#fff; padding:4px 12px; border-radius:15px; font-size:12px;">🇹🇳 مجتمع تونس الرقمي</span>
+    </div>
+
+    <div class="b-denet">
+      <div>
+        <strong id="denetTitle">☁️ تحكّم في بياناتك مع DeNet 🔐 — تخزين لامركزي ومكافآت Watcher Node</strong>
+        <p id="denetSub">خزّن ملفاتك بأمان على شبكة لامركزية وفعّل Watcher Node على هاتفك لكسب مكافآت وتأمين الشبكة.</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="btn-ref" id="refCopyBtn" onclick="navigator.clipboard.writeText('0xba6b505f89f7d6f2165ddf62dbb0c51e2240d583'); this.innerText='✔';">نسخ رمز الإحالة 📋</button>
+        <a id="welcomeBtn" href="https://denet.app" target="_blank" class="btn-link">مكافأة ترحيبية 🚀</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div>
+        <h3 id="tUsb">🔌 فاحص فيروسات USB والملفات</h3>
+        <p id="dUsb">اختر ملفاً من الفلاشة لفحص امتداده.</p>
+        <input type="file" id="usbFile">
+      </div>
+      <div>
+        <button type="button" id="bUsb" class="act btn-gold" style="width:100%" onclick="runUsb()">فحص الملف 🛡️</button>
+        <div class="res" id="usbRes"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3 id="tPhone">📱 فاحص أمان الهاتف والجهاز</h3>
+        <p id="dPhone">تحليل بيئة الجهاز والاتصال المشفر.</p>
+      </div>
+      <div>
+        <button type="button" id="bPhone" class="act btn-gold" style="width:100%" onclick="runPhone()">فحص الجهاز 🔍</button>
+        <div class="res" id="phoneRes"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3 id="tPass">🔑 مولد وفاحص كلمات المرور</h3>
+        <p id="dPass">إنشاء كلمات مرور قوية وفحص أمانها.</p>
+        <input type="text" id="passIn" placeholder="Password..." oninput="runPassCheck()" dir="ltr">
+      </div>
+      <div>
+        <div class="btn-row">
+          <button type="button" id="bGen" class="act btn-gold" onclick="runPassGen()">توليد</button>
+          <button type="button" id="bCopy" class="act btn-purple" onclick="runCopy()">نسخ 📋</button>
+        </div>
+        <div class="res" id="passRes"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3 id="tCry">🔒 خزنة تشفير الرسائل</h3>
+        <textarea id="secText" placeholder="Text / Code..."></textarea>
+        <input type="password" id="secKey" placeholder="Key (1234)">
+      </div>
+      <div>
+        <div class="btn-row">
+          <button type="button" id="bEnc" class="act btn-gold" onclick="runCrypto(true)">تشفير 🔒</button>
+          <button type="button" id="bDec" class="act btn-purple" onclick="runCrypto(false)">فك التشفير 🔓</button>
+        </div>
+        <div class="res" id="secRes"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3 id="tUrl">🌐 فحص الروابط المشبوهة</h3>
+        <p id="dUrl">كشف الروابط غير المشفرة والتصيد.</p>
+        <input type="text" id="urlIn" placeholder="https://minepi.com" dir="ltr">
+      </div>
+      <div>
+        <button type="button" id="bUrl" class="act btn-gold" style="width:100%" onclick="runUrl()">فحص الرابط 🔍</button>
+        <div class="res" id="urlRes"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3 id="tWal">🪙 مدقق محافظ الكريبتو و Pi</h3>
+        <p id="dWal">التحقق من صحة عنوان المحفظة.</p>
+        <input type="text" id="walIn" placeholder="Wallet Address..." dir="ltr">
+      </div>
+      <div>
+        <button type="button" id="bWal" class="act btn-gold" style="width:100%" onclick="runWallet()">تحقق من العنوان π</button>
+        <div class="res" id="walRes"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3 id="tMail">📧 فحص البريد الإلكتروني</h3>
+        <p id="dMail">كشف البريد المؤقت الوهمي.</p>
+        <input type="text" id="mailIn" placeholder="user@gmail.com" dir="ltr">
+      </div>
+      <div>
+        <button type="button" id="bMail" class="act btn-gold" style="width:100%" onclick="runMail()">فحص البريد ⚡</button>
+        <div class="res" id="mailRes"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3><span id="tScore">✅ مؤشر الحصانة الرقمية</span> (<span id="pct">0%</span>)</h3>
+        <div class="bar"><div class="fill" id="fillBar"></div></div>
+        <label><input type="checkbox" class="chk" onchange="runScore()"><span id="c1"> تفعيل المصادقة الثنائية (2FA)</span></label>
+        <label><input type="checkbox" class="chk" onchange="runScore()"><span id="c2"> حفظ عبارة مرور Pi بأمان</span></label>
+        <label><input type="checkbox" class="chk" onchange="runScore()"><span id="c3"> تحديث النظام باستمرار</span></label>
+        <label><input type="checkbox" class="chk" onchange="runScore()"><span id="c4"> تجنب ملفات USB المجهولة</span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3 id="tDenetCard">☁️ التخزين اللامركزي و Watcher Node</h3>
+        <p id="dDenetCard">خزّن ملفاتك بأمان على شبكة DeNet وفعّل Watcher Node على هاتفك لكسب المكافآت وتأمين الشبكة.</p>
+      </div>
+      <div>
+        <a href="https://denet.app" target="_blank" style="text-decoration:none;">
+          <button type="button" id="bDenetCard" class="act btn-gold" style="width:100%">انضم واحصل على مكافأة ترحيبية 🚀</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="lang.js"></script>
+</body>
+</html>
