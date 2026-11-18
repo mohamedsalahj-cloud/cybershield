@@ -1,7 +1,6 @@
 services:
   cybershield:
-    image: nginx:alpine
+    build: .
     ports:
       - "${APP_PORT:-8080}:80"
-    command: sh -c "apk add --no-cache git && rm -rf /usr/share/nginx/html/* /usr/share/nginx/html/.* 2>/dev/null || true && git clone https://github.com/mohamedsalahj-cloud/cybershield.git /usr/share/nginx/html && nginx -g 'daemon off;'"
     restart: unless-stopped
